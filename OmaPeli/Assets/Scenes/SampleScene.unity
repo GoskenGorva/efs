@@ -667,7 +667,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 24.2, y: 0, z: -10}
+  originalPosition: {x: 0, y: 0, z: -10}
   button1: {fileID: 1545195334}
+  cameraPos1: {x: 0, y: 0, z: 0}
+  cameraPos2: {x: 0, y: 0, z: 0}
+  cameraPos3: {x: 12.26, y: 0, z: -10}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -678,7 +682,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.01961991, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -695,7 +699,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.012866
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1739,7 +1743,7 @@ Transform:
   m_GameObject: {fileID: 1140830859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -18.598316, y: -4.0782356, z: 1}
-  m_LocalScale: {x: 1.2514321, y: 1.349039, z: 10}
+  m_LocalScale: {x: 1.2357892, y: 1.349039, z: 10}
   m_Children: []
   m_Father: {fileID: 459863051}
   m_RootOrder: 5
@@ -2410,6 +2414,8 @@ GameObject:
   - component: {fileID: 1535832856}
   - component: {fileID: 1535832858}
   - component: {fileID: 1535832857}
+  - component: {fileID: 1535832859}
+  - component: {fileID: 1535832860}
   m_Layer: 0
   m_Name: Walls (6)
   m_TagString: Untagged
@@ -2425,8 +2431,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535832855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.62, y: -1.25, z: 1}
-  m_LocalScale: {x: 0.113643005, y: 18.10606, z: 10}
+  m_LocalPosition: {x: -3.62, y: -3.49, z: 1}
+  m_LocalScale: {x: 0.113643, y: 18.10606, z: 10}
   m_Children: []
   m_Father: {fileID: 459863051}
   m_RootOrder: 2
@@ -2508,6 +2514,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1535832859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535832855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f29c0410112b5942babef44476085bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 12.11154, y: 4, z: 0}
+  button2: {fileID: 1158040340}
+--- !u!50 &1535832860
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535832855}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 9.721259
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1545195332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,7 +2563,7 @@ GameObject:
   - component: {fileID: 1545195337}
   - component: {fileID: 1545195336}
   m_Layer: 0
-  m_Name: Camera1to2
+  m_Name: CameraTo2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2536,7 +2577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545195332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.65, y: -4.8, z: 0}
+  m_LocalPosition: {x: 1.65, y: -4.8, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1897801538}
@@ -2621,7 +2662,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
@@ -2640,7 +2681,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11371982, y: -0.006504774}
+  m_Offset: {x: 11.540654, y: 3.6550913}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2651,7 +2692,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62743974, y: 1.095429}
+  m_Size: {x: 23.406187, y: 8.640231}
   m_EdgeRadius: 0
 --- !u!1 &1569624319
 GameObject:
@@ -2677,7 +2718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569624319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 32.84546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1657611014}
@@ -2726,7 +2767,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657611013}
-  m_Text: 'Press K to '
+  m_Text: 'Press P to '
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -3253,6 +3294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputShift: 0
+  playerPosition: {x: -10.04, y: 2.96, z: 0}
 --- !u!212 &2034123427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3312,7 +3354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034123425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.04, y: 2.96, z: 0}
+  m_LocalPosition: {x: -9.78, y: 2.96, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}

@@ -20,14 +20,14 @@ public class Button2 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print("Johoo");
+        
         if(other.gameObject.tag == "Player")
         {
             SpriteRenderer render = GetComponent<SpriteRenderer>();
             m_oldColor = render.material.color;
             render.material.color = Color.green;
             ButtonActive2 = true;
-            print("Ehei");
+            
         }
     }
     void OnTriggerExit2D(Collider2D other)

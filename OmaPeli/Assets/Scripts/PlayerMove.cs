@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
     public bool inputShift;
     int dashTimer = 0;
     int sprintSpeed = 10;
+    public Vector3 playerPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerMove : MonoBehaviour
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
         
+        //Run
         if(Input.GetKey(KeyCode.LeftShift)) //Shift input detection
         {
             inputShift = true;
@@ -35,6 +37,16 @@ public class PlayerMove : MonoBehaviour
         else
         {
             inputShift = false;
+        }
+
+        //Ability1
+        if(Input.GetKey(KeyCode.P)) 
+        {
+            playerPosition = transform.position;
+        }
+        if(Input.GetKey(KeyCode.L))
+        {
+            transform.position = Vector3.Lerp(transform.position, playerPosition, 1);
         }
     }
 

@@ -12,10 +12,8 @@ public class Button1 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print("1");
-        if(Input.GetKeyDown(KeyCode.M))
+        if(other.GetComponent<Collider2D>().gameObject.name == "PlayerPlaceHolder")
         {
-            print("2");
             SpriteRenderer render = GetComponent<SpriteRenderer>();
             ButtonActive1 = true;
         }
