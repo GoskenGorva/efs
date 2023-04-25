@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class AbilityIndicator : MonoBehaviour
 {
-
+    Rigidbody rb;
     public Vector3 indicatorPosition;
-    public Vector3 abilityIndicator;
+    //public PlayerMove abilityIndicator;
 
     // Start is called before the first frame update
     void Start()
     {
-        indicatorPosition = GameObject.Find("PlayerPlaceHolder").GetComponent<PlayerMove>();
+        rb = gameObject.GetComponent<Rigidbody>();
+        //indicatorPosition = GameObject.Find("PlayerPlaceHolder").GetComponent<PlayerMove>();
     }
-
-    // Update is called once per frame
+    // Upd  ate is called once per frame
     void Update()
     {
         if(Input.GetKey(KeyCode.P))
         {
-            transform.position = Vector3.Lerp(transform.position, indicatorPosition.abilityIndicator, 1);
+            //transform.position = Vector3.Lerp(transform.position, indicatorPosition.abilityIndicator, 1);
         }
     }
 }
