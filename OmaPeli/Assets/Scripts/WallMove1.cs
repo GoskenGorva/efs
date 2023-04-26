@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallMove1 : MonoBehaviour
 {
     Rigidbody rb;
-    float wallMovementSpeed = 0.1f;
+    float wallMovementSpeed = 0.7f;
     public Vector3 targetPosition;
     public Vector3 originalPosition;
     public Button2 button2;
@@ -18,7 +18,7 @@ public class WallMove1 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(button2.ButtonActive2)
         {
