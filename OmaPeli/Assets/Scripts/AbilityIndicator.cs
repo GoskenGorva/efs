@@ -6,7 +6,7 @@ public class AbilityIndicator : MonoBehaviour
 {
     Rigidbody rb;
     public Vector3 indicatorPosition;
-    //public PlayerMove abilityIndicator;
+    [SerializeField] private GameObject PlayerPlaceHolder;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class AbilityIndicator : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.P))
         {
-            //transform.position = Vector3.Lerp(transform.position, indicatorPosition.abilityIndicator, 1);
+            transform.position = Vector3.Lerp(transform.position, PlayerPlaceHolder.transform.position, 1);
         }
     }
 }

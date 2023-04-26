@@ -9,7 +9,6 @@ public class PlayerMove : MonoBehaviour
 
     //Muuttujat
     float walkSpeed = 4f;
-    float speedLimiter = 0.7f;
     float inputVertical;
     float inputHorizontal;
     public bool inputShift;
