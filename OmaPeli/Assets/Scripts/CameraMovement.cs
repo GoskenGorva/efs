@@ -10,50 +10,48 @@ public class CameraMovement : MonoBehaviour
     public Vector3 targetPosition;
     public Vector3 originalPosition;
     public Vector3 nextCameraPosition;
-    public Button1 button1;
-    int M1 = 0;
 
-    //camera positions
+    //Camera triggers
+    public Button1 Trigger1;
+    public Button1 Trigger2;
+    public Button1 Trigger3;
+    public Button1 Trigger4;
+
+    //Camera positions
     public Vector3 cameraPos1;
     public Vector3 cameraPos2;
     public Vector3 cameraPos3;
-
-
-    //functions
-
-    public Vector3 NextCameraPosition(Vector3 nextCameraPos, Vector3 originalPosition, Vector3 targetPosition)
-    {
-        originalPosition = targetPosition;
-        return originalPosition;
-        targetPosition = nextCameraPos;
-        return targetPosition;
-    }
+    public Vector3 cameraPos4;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        button1 = GameObject.Find("CameraTo2").GetComponent<Button1>(); // find the Button1 script on the CameraTo2 object and get a reference to it
-        targetPosition = cameraPos2;
-        originalPosition = cameraPos1;
-        nextCameraPosition = cameraPos3;
+        Trigger1 = GameObject.Find("CameraTo1").GetComponent<Button1>();
+        Trigger2 = GameObject.Find("CameraTo2").GetComponent<Button1>();
+        Trigger3 = GameObject.Find("CameraTo3").GetComponent<Button1>();
+        Trigger4 = GameObject.Find("CameraTo4").GetComponent<Button1>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(button1.ButtonActive1)
+        if(Trigger1.ButtonActive1)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, cameraMovementSpeed);
-            //originalPosition = targetPosition;
+            transform.position = Vector3.Lerp(transform.position, cameraPos1, cameraMovementSpeed);
         }
-        else
+        if(Trigger2.ButtonActive1)
         {
-            transform.position = Vector3.Lerp(transform.position, originalPosition, cameraMovementSpeed/2);
+            transform.position = Vector3.Lerp(transform.position, cameraPos2, cameraMovementSpeed);
         }
-        if(Input.GetKey(KeyCode.M))
+        if(Trigger3.ButtonActive1)
         {
+            transform.position = Vector3.Lerp(transform.position, cameraPos3, cameraMovementSpeed);
+        }
+        if(Trigger4.ButtonActive1)
+        {
+            transform.position = Vector3.Lerp(transform.position, cameraPos4, cameraMovementSpeed);
         }
     }
 }
