@@ -16,12 +16,14 @@ public class CameraMovement : MonoBehaviour
     public Button1 Trigger2;
     public Button1 Trigger3;
     public Button1 Trigger4;
+    public Button1 Trigger5;
 
     //Camera positions
     public Vector3 cameraPos1;
     public Vector3 cameraPos2;
     public Vector3 cameraPos3;
     public Vector3 cameraPos4;
+    public Vector3 cameraPos5;
 
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class CameraMovement : MonoBehaviour
         Trigger2 = GameObject.Find("CameraTo2").GetComponent<Button1>();
         Trigger3 = GameObject.Find("CameraTo3").GetComponent<Button1>();
         Trigger4 = GameObject.Find("CameraTo4").GetComponent<Button1>();
+        Trigger5 = GameObject.Find("CameraToFinish").GetComponent<Button1>();
     }
 
     // Update is called once per frame
@@ -52,6 +55,10 @@ public class CameraMovement : MonoBehaviour
         if(Trigger4.ButtonActive1)
         {
             transform.position = Vector3.Lerp(transform.position, cameraPos4, cameraMovementSpeed);
+        }
+        if(Trigger5.ButtonActive1)
+        {
+            transform.position = Vector3.Lerp(transform.position, cameraPos5, cameraMovementSpeed);
         }
     }
 }

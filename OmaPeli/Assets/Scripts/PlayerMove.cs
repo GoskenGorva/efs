@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     float inputVertical;
     float inputHorizontal;
     public bool inputShift;
+    public bool inputRestart;
     int dashTimer = 0;
     int sprintSpeed = 10;
     public Vector3 playerPosition;
@@ -29,7 +30,7 @@ public class PlayerMove : MonoBehaviour
         inputVertical = Input.GetAxisRaw("Vertical");
         
         //Run
-        if(Input.GetKey(KeyCode.LeftShift)) //Shift input detection
+        if(Input.GetKey(KeyCode.LeftShift))
         {
             inputShift = true;
         }
@@ -46,6 +47,14 @@ public class PlayerMove : MonoBehaviour
         if(Input.GetKey(KeyCode.L))
         {
             transform.position = Vector3.Lerp(transform.position, playerPosition, 1);
+        }
+        
+        if(Input.GetKey(KeyCode.R))
+        {
+            inputRestart = true;
+        }
+        else{
+            inputRestart = false;
         }
     }
 

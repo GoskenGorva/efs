@@ -18,7 +18,6 @@ public class Button1 : MonoBehaviour
             ButtonActive1 = true;
         }
     }
-
     void OnTriggerExit2D(Collider2D other)
     {
         if(other.gameObject.name == "PlayerPlaceHolder")

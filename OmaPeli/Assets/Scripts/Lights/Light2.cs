@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Light2 : MonoBehaviour
 {
+    Rigidbody rb;
+    public Button2 Trigger1;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody>();
+        Trigger1 = GameObject.Find("ButtonP2").GetComponent<Button2>();
     }
+    private Color m_oldColor = new Color(82f/255f, 82f/255f, 82f/255f);
+    public bool ButtonActive2;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if(Trigger1.ButtonActive2)
+        {
+            SpriteRenderer render = GetComponent<SpriteRenderer>();
+            render.material.color = Color.green;
+            ButtonActive2 = true;
+        }
+        else
+        {
+            SpriteRenderer render = GetComponent<SpriteRenderer>();
+            render.material.color = m_oldColor;
+            ButtonActive2 = false;
+        }
     }
 }

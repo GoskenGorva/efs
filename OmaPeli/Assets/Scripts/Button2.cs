@@ -27,7 +27,6 @@ public class Button2 : MonoBehaviour
             m_oldColor = render.material.color;
             render.material.color = Color.green;
             ButtonActive2 = true;
-            
         }
     }
     void OnTriggerExit2D(Collider2D other)
