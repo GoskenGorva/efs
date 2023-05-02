@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
     public bool inputRestart;
     int dashTimer = 0;
     int sprintSpeed = 10;
+    public GameObject Mark;
+    public GameObject Rotation0;
     public Vector3 playerPosition;
     public Vector3 levelPosition;
 
@@ -85,13 +87,17 @@ public class PlayerMove : MonoBehaviour
         if(Input.GetKey(KeyCode.L))
         {
             transform.position = Vector3.Lerp(transform.position, playerPosition, 1);
+            transform.rotation = Mark.transform.rotation;
+            rb.angularVelocity = 0;
         }
         
         if(Input.GetKey(KeyCode.R))
         {
             inputRestart = true;
             transform.position = Vector3.Lerp(transform.position, levelPosition, 1);
-            transform.Rotate(0f, 0f, 0f);
+            transform.rotation = Rotation0.transform.rotation;
+            rb.angularVelocity = 0;
+            //transform.rotation = Quaternion.Eulert(0f, 0f, 0f);
         }
         else
         {

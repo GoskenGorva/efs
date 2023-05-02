@@ -5,32 +5,27 @@ using UnityEngine;
 public class BoxOGPos : MonoBehaviour
 {
 
+    Rigidbody2D rb;
     public Vector3 originalPosition;
-    public Quaternion originalRotation;
     public PlayerMove Trigger1;
-    float orgX;
-    float orgY;
-    float orgZ;
+    public GameObject PlayerPlaceHolder;
 
     // Start is called before the first frame update
     void Start()
     {
         originalPosition = transform.position;
-        originalRotation = transform.rotation;
-        Trigger1 = GameObject.Find("PlayerPlaceHolder").GetComponent<PlayerMove>();
-        orgX = transform.rotation.x;
-        orgY = transform.rotation.y;
-        orgZ = transform.rotation.z;
+        //Trigger1 = GameObject.Find("PlayerPlaceHolder").GetComponent<PlayerMove>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Trigger1.inputRestart)
+        if(Input.GetKey(KeyCode.R))
         {
-            transform.Rotate(orgX, orgY, orgZ);    
+            rb.angularVelocity = 0;
+            print("jis");
+            transform.rotation = PlayerPlaceHolder.transform.rotation;
             transform.position = Vector3.Lerp(transform.position, originalPosition, 0);
-            transform.rotation = originalRotation;
         }
     }
 }

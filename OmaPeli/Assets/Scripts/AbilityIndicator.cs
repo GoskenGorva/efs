@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class AbilityIndicator : MonoBehaviour
 {
-    Rigidbody rb;
-    public Vector3 indicatorPosition;
-    [SerializeField] private GameObject PlayerPlaceHolder;
+    public GameObject PlayerPlaceHolder;
+    public GameObject Mark;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody>();
+        
         //indicatorPosition = GameObject.Find("PlayerPlaceHolder").GetComponent<PlayerMove>();
     }
     // Upd  ate is called once per frame
@@ -19,7 +18,8 @@ public class AbilityIndicator : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.P))
         {
-            transform.position = Vector3.Lerp(transform.position, PlayerPlaceHolder.transform.position, 1);
+            Mark.transform.position = PlayerPlaceHolder.transform.position;
+            Mark.transform.rotation = PlayerPlaceHolder.transform.rotation;
         }
     }
 }
