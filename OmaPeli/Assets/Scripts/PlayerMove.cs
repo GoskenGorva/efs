@@ -16,11 +16,29 @@ public class PlayerMove : MonoBehaviour
     int dashTimer = 0;
     int sprintSpeed = 10;
     public Vector3 playerPosition;
+    public Vector3 levelPosition;
+
+    public Button1 Trigger1;
+    public Button1 Trigger2;
+    public Button1 Trigger3;
+    public Button1 Trigger4;
+    public Button1 Trigger5;
+
+    public Vector3 PLPos1;
+    public Vector3 PLPos2;
+    public Vector3 PLPos3;
+    public Vector3 PLPos4;
+    public Vector3 PLPos5;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        Trigger1 = GameObject.Find("CameraTo1").GetComponent<Button1>();
+        Trigger2 = GameObject.Find("CameraTo2").GetComponent<Button1>();
+        Trigger3 = GameObject.Find("CameraTo3").GetComponent<Button1>();
+        Trigger4 = GameObject.Find("CameraTo4").GetComponent<Button1>();
+        Trigger5 = GameObject.Find("CameraToFinish").GetComponent<Button1>();
     }
 
     // Update is called once per frame
@@ -38,6 +56,26 @@ public class PlayerMove : MonoBehaviour
         {
             inputShift = false;
         }
+        if(Trigger1.ButtonActive1)
+        {
+            levelPosition = PLPos1;
+        }
+        if(Trigger2.ButtonActive1)
+        {
+            levelPosition = PLPos2;
+        }
+        if(Trigger3.ButtonActive1)
+        {
+            levelPosition = PLPos3;
+        }
+        if(Trigger4.ButtonActive1)
+        {
+            levelPosition = PLPos4;
+        }
+        if(Trigger5.ButtonActive1)
+        {
+            levelPosition = PLPos5;
+        }
 
         //Ability1
         if(Input.GetKey(KeyCode.P)) 
@@ -52,8 +90,11 @@ public class PlayerMove : MonoBehaviour
         if(Input.GetKey(KeyCode.R))
         {
             inputRestart = true;
+            transform.position = Vector3.Lerp(transform.position, levelPosition, 1);
+            transform.Rotate(0f, 0f, 0f);
         }
-        else{
+        else
+        {
             inputRestart = false;
         }
     }

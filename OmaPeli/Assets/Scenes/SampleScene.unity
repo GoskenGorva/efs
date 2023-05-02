@@ -3612,6 +3612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPosition: {x: -5.57, y: 8.9, z: 31.12353}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
   Trigger1: {fileID: 0}
 --- !u!1 &717999616
 GameObject:
@@ -5172,6 +5173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPosition: {x: 9.9, y: 6.19, z: 31.12353}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
   Trigger1: {fileID: 0}
 --- !u!1 &1025583217
 GameObject:
@@ -6274,6 +6276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPosition: {x: -5.82, y: 0.12, z: 31.12353}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
   Trigger1: {fileID: 0}
 --- !u!1 &1299261259
 GameObject:
@@ -6959,6 +6962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPosition: {x: -6.89, y: 8.87, z: 31.12353}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
   Trigger1: {fileID: 0}
 --- !u!1 &1467096653
 GameObject:
@@ -9955,6 +9959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPosition: {x: 10.81, y: 4.78, z: 31.12353}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
   Trigger1: {fileID: 0}
 --- !u!1 &1957727529
 GameObject:
@@ -10692,6 +10697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalPosition: {x: 9.07, y: 4.57, z: 31.12353}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
   Trigger1: {fileID: 0}
 --- !u!1 &2034123425
 GameObject:
@@ -10728,6 +10734,17 @@ MonoBehaviour:
   inputShift: 0
   inputRestart: 0
   playerPosition: {x: -7.32, y: 2.96, z: 0}
+  levelPosition: {x: 0, y: 0, z: 0}
+  Trigger1: {fileID: 0}
+  Trigger2: {fileID: 0}
+  Trigger3: {fileID: 0}
+  Trigger4: {fileID: 0}
+  Trigger5: {fileID: 0}
+  PLPos1: {x: -7.3, y: 3.62, z: 0}
+  PLPos2: {x: 10.3, y: -2.77, z: 0}
+  PLPos3: {x: 25.12, y: 6.16, z: 0}
+  PLPos4: {x: 7.57, y: 13.36, z: 0}
+  PLPos5: {x: 0, y: 0, z: 0}
 --- !u!212 &2034123427
 SpriteRenderer:
   m_ObjectHideFlags: 0
