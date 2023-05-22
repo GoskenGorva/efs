@@ -25,7 +25,6 @@ public class CameraMovement : MonoBehaviour
     public Vector3 cameraPos4;
     public Vector3 cameraPos5;
 
-
     // Start is called before the first frame update
     void Start()
     {
